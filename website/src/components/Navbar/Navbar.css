@@ -1,0 +1,162 @@
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  /* border-bottom: 1px solid #333; */
+  z-index: 1000;
+  padding: 0;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 70px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+.navbar-logo > img {
+  width: 100px;
+}
+
+.navbar-logo-text {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #000;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+/* Navigation Links */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navbar-link-item {
+  margin: 0;
+}
+
+.navbar-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.navbar-link:hover {
+  color: #ccc;
+}
+
+/* CTA Button */
+.navbar-cta {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-cta-button {
+  background: #000;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+}
+
+.navbar-cta-button:hover {
+  background-color: #8b8b8b;
+}
+
+/* Mobile Toggle */
+.navbar-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.navbar-mobile-toggle-bar {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 1rem;
+  }
+
+  .navbar-nav {
+    display: none;
+  }
+
+  .navbar-cta {
+    display: none;
+  }
+
+  .navbar-mobile-toggle {
+    display: flex;
+  }
+
+  /* Mobile Menu Active State */
+  .navbar-nav.navbar-nav-active {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #000;
+    border-top: 1px solid #333;
+    padding: 1rem;
+  }
+
+  .navbar-nav.navbar-nav-active .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .navbar-nav.navbar-nav-active .navbar-link {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .navbar-nav.navbar-nav-active .navbar-link:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    height: 60px;
+  }
+
+  .navbar-logo-text {
+    font-size: 1.3rem;
+  }
+}
