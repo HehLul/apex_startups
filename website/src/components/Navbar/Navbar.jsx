@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="navbar-container">
         <div className="navbar-logo">
           <img src={logo} alt="" />
-          {/* <span className="navbar-logo-text">ApexStartups</span> */}
+          <span className="navbar-logo-text">ApexStartups</span>
         </div>
         <nav className="navbar-nav">
           <ul className="navbar-links">
