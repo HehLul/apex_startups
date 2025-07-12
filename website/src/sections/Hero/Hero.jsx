@@ -1,4 +1,6 @@
 import heroimg1 from "../../assets/hero_img_1.png";
+import heroimg2 from "../../assets/hero_img_2.png";
+import heroimg3 from "../../assets/hero_img_3.png";
 import "./Hero.css";
 export default function Hero() {
   return (
@@ -6,16 +8,17 @@ export default function Hero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span className="hero-badge-text">Premium MVP Development</span>
+            <span className="hero-badge-text">Premium Startup Development</span>
           </div>
 
           <h1 className="hero-title">
             We Bring Your Startup Idea Into Reality
           </h1>
+          {/* <h1 className="hero-title">We Help Founders with the Technical</h1> */}
 
           <p className="hero-subtitle">
-            Professional MVP development that gets you to market fast. No
-            technical co-founder required.
+            Complete software solutions for ambitious founders. Built fast,
+            built right.. No technical headaches.
           </p>
 
           <div className="hero-features">
@@ -24,14 +27,16 @@ export default function Hero() {
               <span className="hero-feature-text">Launch-ready in weeks</span>
             </div>
             <div className="hero-feature">
-              <span className="hero-feature-icon">🔒</span>
+              <span className="hero-feature-icon">🚀</span>
               <span className="hero-feature-text">
-                Full source code ownership
+                Built to scale from day one
               </span>
             </div>
             <div className="hero-feature">
-              <span className="hero-feature-icon">💼</span>
-              <span className="hero-feature-text">No equity required</span>
+              <span className="hero-feature-icon">⏰</span>
+              <span className="hero-feature-text">
+                Updates every 24-78 hours
+              </span>
             </div>
           </div>
 
@@ -60,28 +65,20 @@ export default function Hero() {
                   alt="MVP Dashboard"
                   className="hero-visual-card-image"
                 />
-                {/* <div className="hero-visual-card-header"></div>
-                <div className="hero-visual-card-content">
-                  <div className="hero-visual-card-line"></div>
-                  <div className="hero-visual-card-line"></div>
-                  <div className="hero-visual-card-line hero-visual-card-line-short"></div>
-                </div> */}
               </div>
               <div className="hero-visual-card hero-visual-card-2">
-                <div className="hero-visual-card-header"></div>
-                <div className="hero-visual-card-content">
-                  <div className="hero-visual-card-line"></div>
-                  <div className="hero-visual-card-line hero-visual-card-line-short"></div>
-                  <div className="hero-visual-card-line"></div>
-                </div>
+                <img
+                  src={heroimg2}
+                  alt="MVP Dashboard"
+                  className="hero-visual-card-image"
+                />
               </div>
               <div className="hero-visual-card hero-visual-card-3">
-                <div className="hero-visual-card-header"></div>
-                <div className="hero-visual-card-content">
-                  <div className="hero-visual-card-line hero-visual-card-line-short"></div>
-                  <div className="hero-visual-card-line"></div>
-                  <div className="hero-visual-card-line"></div>
-                </div>
+                <img
+                  src={heroimg3}
+                  alt="MVP Dashboard"
+                  className="hero-visual-card-image"
+                />
               </div>
             </div>
           </div>

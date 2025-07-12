@@ -11,13 +11,8 @@ export default function Navbar() {
         <nav className="navbar-nav">
           <ul className="navbar-links">
             <li className="navbar-link-item">
-              <a href="#home" className="navbar-link">
-                Home
-              </a>
-            </li>
-            <li className="navbar-link-item">
               <a href="#services" className="navbar-link">
-                Services
+                Portfolio
               </a>
             </li>
             <li className="navbar-link-item">
@@ -26,13 +21,8 @@ export default function Navbar() {
               </a>
             </li>
             <li className="navbar-link-item">
-              <a href="#portfolio" className="navbar-link">
-                Portfolio
-              </a>
-            </li>
-            <li className="navbar-link-item">
               <a href="#process" className="navbar-link">
-                Process
+                FAQ
               </a>
             </li>
             <li className="navbar-link-item">
