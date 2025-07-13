@@ -1,12 +1,11 @@
 /* Portfolio.css */
 .portfolio {
-  padding: 20px 0;
-  background: #e9e9e9;
-  overflow: hidden;
+  padding: 40px 0;
+  background: #fafafa;
 }
 
 .portfolio-container {
-  max-width: 100vw;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -30,114 +29,76 @@
   margin: 0 auto;
 }
 
-.portfolio-carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 60px;
 }
 
-.carousel-arrow {
-  background: white;
-  border: 2px solid #e5e5e5;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
+.show-more-container {
   display: flex;
-  align-items: center;
   justify-content: center;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-  transition: all 0.3s ease;
-  z-index: 2;
-  flex-shrink: 0;
 }
 
-.carousel-arrow:hover {
+.show-more-btn {
   background: #1a1a1a;
   color: white;
-  border-color: #1a1a1a;
-  transform: scale(1.05);
-}
-
-.projects-container {
-  flex: 1;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.projects-track {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.portfolio-indicators {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 40px;
-}
-
-.indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
   border: none;
-  background: #d1d5db;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
 }
 
-.indicator.active {
-  background: #1a1a1a;
-  transform: scale(1.2);
-}
-
-.indicator:hover {
-  background: #9ca3af;
+.show-more-btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
-  .portfolio-container {
-    max-width: 70vw;
-  }
-}
-
 @media (max-width: 768px) {
   .portfolio-container {
-    max-width: 90vw;
+    max-width: 95vw;
     padding: 0 15px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
   }
 
   .portfolio-header h2 {
     font-size: 2rem;
   }
 
-  .carousel-arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-
-  .portfolio-carousel {
-    gap: 15px;
+  .portfolio-header {
+    margin-bottom: 40px;
   }
 }
 
 @media (max-width: 480px) {
   .portfolio-container {
-    max-width: 95vw;
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+
+  .projects-grid {
+    gap: 20px;
   }
 
   .portfolio-header h2 {
     font-size: 1.75rem;
   }
 
-  .carousel-arrow {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
+  .show-more-btn {
+    padding: 14px 28px;
+    font-size: 0.9rem;
   }
 }

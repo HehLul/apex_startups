@@ -1,6 +1,7 @@
 // ProjectCard.jsx
 import React from "react";
 import "./ProjectCard.css";
+
 const ProjectCard = ({ project, onClick }) => {
   return (
     <div className="project-card" onClick={onClick}>
@@ -22,13 +23,14 @@ const ProjectCard = ({ project, onClick }) => {
 
         <h3 className="project-title">{project.title}</h3>
         <p className="project-subtitle">{project.subtitle}</p>
-
+        {/* 
         <div className="project-metrics">
           <span className="metrics-label">Key Result:</span>
           <span className="metrics-value">{project.metrics}</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
+
 export default ProjectCard;

@@ -3,15 +3,20 @@ import React, { useState } from "react";
 import ProjectCard from "./ProjectCard/ProjectCard";
 import ProjectModal from "./ProjectModal/ProjectModal";
 import "./Portfolio.css";
+
+import image1 from "../../assets/hero_img_2.png";
+import image2 from "../../assets/hero_img_1.png";
+import image3 from "../../assets/hero_img_3.png";
+
 const Portfolio = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showAll, setShowAll] = useState(false);
   const projects = [
     {
       id: 1,
       title: "AI Chatbot Builder",
       subtitle: "Intelligent Customer Service Platform",
-      image: "/api/placeholder/400/300",
+      image: image1,
       tags: ["AI/ML", "React", "Node.js"],
       metrics: "60% reduction in support tickets",
       overview:
@@ -65,7 +70,7 @@ const Portfolio = () => {
       id: 3,
       title: "Video Content Platform",
       subtitle: "Curated Creator Streaming Service",
-      image: "/api/placeholder/400/300",
+      image: image2,
       tags: ["Video", "React", "AWS"],
       metrics: "1M+ hours streamed",
       overview:
@@ -92,7 +97,7 @@ const Portfolio = () => {
       id: 4,
       title: "Community Resource Hub",
       subtitle: "Knowledge Sharing Platform",
-      image: "/api/placeholder/400/300",
+      image: image3,
       tags: ["Community", "Next.js", "Firebase"],
       metrics: "1,000+ active users",
       overview:
@@ -117,14 +122,6 @@ const Portfolio = () => {
     },
   ];
 
-  const nextProject = () => {
-    setCurrentIndex((prev) => (prev + 1) % projects.length);
-  };
-
-  const prevProject = () => {
-    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
-  };
-
   const openProject = (project) => {
     setSelectedProject(project);
   };
@@ -133,57 +130,33 @@ const Portfolio = () => {
     setSelectedProject(null);
   };
 
+  const projectsToShow = showAll ? projects : projects.slice(0, 4);
+
   return (
     <section className="portfolio">
       <div className="portfolio-container">
         <div className="portfolio-header">
           <h2>Case Studies</h2>
-          <p>Real projects. Real results. Real impact.</p>
+          <p>The proof is in the pudding ;)</p>
         </div>
 
-        <div className="portfolio-carousel">
-          <button
-            className="carousel-arrow carousel-arrow-left"
-            onClick={prevProject}
-            aria-label="Previous project"
-          >
-            ←
-          </button>
-
-          <div className="projects-container">
-            <div
-              className="projects-track"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {projects.map((project) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  onClick={() => openProject(project)}
-                />
-              ))}
-            </div>
-          </div>
-
-          <button
-            className="carousel-arrow carousel-arrow-right"
-            onClick={nextProject}
-            aria-label="Next project"
-          >
-            →
-          </button>
-        </div>
-
-        <div className="portfolio-indicators">
-          {projects.map((_, index) => (
-            <button
-              key={index}
-              className={`indicator ${index === currentIndex ? "active" : ""}`}
-              onClick={() => setCurrentIndex(index)}
-              aria-label={`Go to project ${index + 1}`}
+        <div className="projects-grid">
+          {projectsToShow.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onClick={() => openProject(project)}
             />
           ))}
         </div>
+
+        {projects.length > 4 && !showAll && (
+          <div className="show-more-container">
+            <button className="show-more-btn" onClick={() => setShowAll(true)}>
+              Show More
+            </button>
+          </div>
+        )}
       </div>
 
       <ProjectModal

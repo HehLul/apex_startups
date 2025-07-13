@@ -1,12 +1,12 @@
 /* ProjectCard.css */
 .project-card {
-  min-width: 100%;
   background: white;
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  height: fit-content;
 }
 
 .project-card:hover {
