@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <span className="hero-badge-text">Premium Startup Development</span>
+            <span className="hero-badge-text">Quality Startup Development</span>
           </div>
 
           <h1 className="hero-title">
@@ -18,7 +18,7 @@ export default function Hero() {
 
           <p className="hero-subtitle">
             Complete software solutions for ambitious founders. Built fast,
-            built right.. No technical headaches.
+            built right. No technical headaches.
           </p>
 
           <div className="hero-features">
@@ -50,9 +50,9 @@ export default function Hero() {
           </div>
 
           <div className="hero-social-proof">
-            <p className="hero-social-proof-text">
+            {/* <p className="hero-social-proof-text">
               Trusted by founders to build their first working prototypes
-            </p>
+            </p> */}
           </div>
         </div>
 
