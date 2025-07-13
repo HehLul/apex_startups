@@ -16,9 +16,8 @@ const Pricing = () => {
         "High-converting landing page design",
         "Email capture optimization",
         "Mobile-responsive build",
-        "Basic analytics setup",
         "Domain setup included",
-        "2-week delivery guarantee",
+        "2-week delivery",
       ],
       cta: "Get Started",
       popular: false,
@@ -33,13 +32,9 @@ const Pricing = () => {
       features: [
         "Working MVP with core features",
         "Interactive prototypes for approval",
-        "Professional UI/UX design",
         "User authentication system",
-        "Database integration",
         "Mobile-responsive design",
-        "Source code ownership",
-        "Technical documentation",
-        "4-week delivery guarantee",
+        "4-week delivery",
       ],
       cta: "Get Started",
       popular: true,
@@ -54,11 +49,6 @@ const Pricing = () => {
       features: [
         "Complete technical consultation",
         "Custom feature development",
-        "Advanced integrations & APIs",
-        "Performance optimization",
-        "Security implementation",
-        "Ongoing maintenance options",
-        "Priority support",
         "Scalable architecture",
         "Timeline based on scope",
       ],
@@ -72,7 +62,7 @@ const Pricing = () => {
     <section className="pricing" id="pricing">
       <div className="pricing-container">
         <div className="pricing-header">
-          <div className="pricing-badge">Pricing</div>
+          {/* <div className="pricing-badge">Pricing</div> */}
           <h2>Simple and Transparent Pricing</h2>
           <p>
             Choose the package that fits your startup's needs. No hidden fees,
@@ -138,10 +128,7 @@ const Pricing = () => {
         </div>
 
         <div className="pricing-footer">
-          <p>
-            All packages include full source code ownership and technical
-            documentation.
-          </p>
+          <p>All packages include full source code ownership.</p>
           <p>
             Need something different?{" "}
             <a href="#contact">Let's discuss your specific requirements.</a>
