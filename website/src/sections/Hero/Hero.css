@@ -248,6 +248,8 @@
 @media (max-width: 768px) {
   .hero-container {
     padding: 0 1rem;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .hero-title {

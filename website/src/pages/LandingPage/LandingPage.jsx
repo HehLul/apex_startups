@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Portfolio from "../../sections/Portfolio/Portfolio";
 import Pricing from "../../sections/Pricing/Pricing";
 import FAQ from "../../sections/FAQ/FAQ";
+import Footer from "../../components/Footer/Footer";
 export default function LandingPage() {
   return (
     <div className="landing-page">
@@ -12,6 +13,7 @@ export default function LandingPage() {
       <Portfolio />
       <Pricing />
       <FAQ />
+      <Footer />
     </div>
   );
 }
