@@ -41,7 +41,6 @@ const FAQ = () => {
     <section className="faq" id="faq">
       <div className="faq-container">
         <div className="faq-header">
-          <div className="faq-badge">FAQ</div>
           <h2>Frequently Asked Questions</h2>
           <p>Everything you need to know about working with ApexStartups</p>
         </div>

@@ -15,28 +15,29 @@ const Portfolio = () => {
     {
       id: 1,
       title: "AI Chatbot Builder",
-      subtitle: "Intelligent Customer Service Platform",
+      subtitle:
+        "No-code platform for entrepreneurs to build and monetize AI chatbots",
       image: image1,
-      tags: ["OpenAI", "NextJS", "React", "Supabase"],
-      metrics: "60% reduction in support tickets",
+      tags: ["SaaS", "MVP", "AI"],
+      metrics: "60+ chatbots created",
       overview:
-        "Built an intelligent customer service bot that automated responses and reduced support workload.",
+        "Built a user-friendly platform where non-technical entrepreneurs can train, customize, and launch their own AI chatbots in under 3 minutes.",
       challenge:
-        "Customer service teams were overwhelmed with repetitive queries, leading to slow response times and customer frustration.",
+        "Entrepreneurs wanted to build and monetize AI chatbots but lacked the technical skills to implement OpenAI API, handle deployment, or create custom interfaces.",
       solution:
-        "Developed an AI-powered chatbot that could handle 80% of common queries, with seamless handoff to human agents for complex issues.",
+        "Developed a simple 3-step process: train your chatbot with custom rules and behaviors, customize the frontend website, and launch to a live subdomain - all without writing code.",
       results: [
-        "60% reduction in support tickets",
-        "Response time improved from 4 hours to under 1 minute",
-        "Customer satisfaction increased by 35%",
+        "60+ chatbots successfully created and deployed",
+        "3-minute average time from setup to live deployment",
+        "Zero technical knowledge required for users",
       ],
-      techStack: ["React", "Node.js", "OpenAI API", "MongoDB", "Socket.io"],
-      timeline: "4 weeks",
+      techStack: ["React", "NextJS", "OpenAI API", "Supabase"],
+      timeline: "3 weeks",
       features: [
-        "Natural language processing",
-        "Conversation history tracking",
-        "Admin dashboard for monitoring",
-        "Multi-language support",
+        "Custom AI training with natural language instructions",
+        "Visual website customization tools",
+        "One-click subdomain deployment",
+        "Monetization-ready chatbot hosting",
       ],
     },
     {

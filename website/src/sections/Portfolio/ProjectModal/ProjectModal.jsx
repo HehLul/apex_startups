@@ -111,7 +111,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             <section className="case-study-cta">
               <h2>Ready to Build Your Vision?</h2>
               <p>Let's create something amazing together.</p>
-              <button className="cta-button">Get Your Quote</button>
+              <button className="cta-button">Get Started</button>
             </section>
           </div>
         </div>
