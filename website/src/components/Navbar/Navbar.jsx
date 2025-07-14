@@ -25,11 +25,6 @@ export default function Navbar() {
                 FAQ
               </a>
             </li>
-            <li className="navbar-link-item">
-              <a href="#contact" className="navbar-link">
-                Contact
-              </a>
-            </li>
           </ul>
         </nav>
 

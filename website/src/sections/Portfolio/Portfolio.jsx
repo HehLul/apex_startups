@@ -17,7 +17,7 @@ const Portfolio = () => {
       title: "AI Chatbot Builder",
       subtitle: "Intelligent Customer Service Platform",
       image: image1,
-      tags: ["AI/ML", "React", "Node.js"],
+      tags: ["OpenAI", "NextJS", "React", "Supabase"],
       metrics: "60% reduction in support tickets",
       overview:
         "Built an intelligent customer service bot that automated responses and reduced support workload.",

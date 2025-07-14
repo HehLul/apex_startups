@@ -79,7 +79,7 @@ const Pricing = () => {
               }`}
             >
               {plan.popular && (
-                <div className="popular-badge">Most Popular</div>
+                <div className="popular-badge">2 slots left</div>
               )}
 
               <div className="pricing-card-header">
