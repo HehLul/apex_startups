@@ -312,7 +312,7 @@
   }
 
   .plan-price {
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 0;
   }
 
@@ -337,5 +337,10 @@
   .pricing-cta {
     padding: 14px 20px;
     font-size: 0.9rem;
+  }
+  .plan-price {
+    /* display: inline-flex; */
+    /* align-items: center; */
+    flex-direction: row;
   }
 }

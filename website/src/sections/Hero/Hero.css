@@ -4,8 +4,8 @@
   color: #fff;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding: 70px 0 0 0; /* Account for fixed navbar */
+  align-items: flex-start;
+  padding: 70 0 0 0; /* Account for fixed navbar */
   position: relative;
   overflow: hidden;
 }
@@ -142,6 +142,7 @@
 }
 
 .hero-visual-container {
+  margin-top: -160px;
   position: relative;
   width: 100%;
   max-width: 550px;
@@ -283,7 +284,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 60px 0 0 0;
+    padding: 120px 0 0 0;
   }
 
   .hero-title {
@@ -296,5 +297,8 @@
 
   .hero-features {
     align-items: center;
+  }
+  .hero-visual-container {
+    margin-top: 0;
   }
 }
