@@ -11,7 +11,7 @@ export default function Navbar() {
         <nav className="navbar-nav">
           <ul className="navbar-links">
             <li className="navbar-link-item">
-              <a href="#services" className="navbar-link">
+              <a href="#portfolio" className="navbar-link">
                 Portfolio
               </a>
             </li>
@@ -21,7 +21,7 @@ export default function Navbar() {
               </a>
             </li>
             <li className="navbar-link-item">
-              <a href="#process" className="navbar-link">
+              <a href="#faq" className="navbar-link">
                 FAQ
               </a>
             </li>

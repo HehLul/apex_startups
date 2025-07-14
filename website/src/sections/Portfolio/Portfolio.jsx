@@ -133,7 +133,7 @@ const Portfolio = () => {
   const projectsToShow = showAll ? projects : projects.slice(0, 4);
 
   return (
-    <section className="portfolio">
+    <section className="portfolio" id="portfolio">
       <div className="portfolio-container">
         <div className="portfolio-header">
           <h2>Case Studies</h2>
