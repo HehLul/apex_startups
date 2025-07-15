@@ -127,11 +127,11 @@
 }
 
 .answer-content {
-  padding: 0 24px 24px 24px;
+  padding: 24px 24px 24px 24px;
 }
 
 .answer-content p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #374151;
   line-height: 1.7;
   margin: 0;
@@ -233,7 +233,7 @@
   }
 
   .answer-content {
-    padding: 0 16px 16px 16px;
+    padding: 16px 16px 16px 16px;
   }
 
   .answer-content p {

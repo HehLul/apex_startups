@@ -14,22 +14,29 @@ const FAQ = () => {
     {
       question: "What is your development process like?",
       answer:
-        "Our development follows a proven 4-phase approach: Discovery & Planning (requirements gathering and technical architecture), Design & Prototyping (UI/UX design and user flow mapping), Development & Testing (agile development with regular updates), and Launch & Handover (deployment, testing, and documentation). You'll receive progress updates every 24-48 hours and can review work at each milestone.",
+        "Our development follows a proven 4-phase approach: Discovery & Planning (requirements gathering and technical architecture), Design & Prototyping (UI/UX design and user flow mapping), Development & Testing (agile development with regular updates), and Launch & Handover (deployment, testing, and documentation). You'll receive progress updates every 24-48 hours.",
     },
+
     {
       question: "Any work you don't cover?",
       answer:
-        "We focus exclusively on web applications, MVPs, and SaaS platforms. We don't handle mobile app development, blockchain/crypto projects, adult content, gambling platforms, or projects requiring specialized compliance (like healthcare or financial services). If your project falls outside our expertise, we'll recommend trusted partners who specialize in those areas.",
+        "We specialize in MVPs, SaaS platforms, Web applications and React Native mobile apps. We don't handle native iOS/Android development, blockchain/crypto projects, or adult content and gambling platforms. For projects outside our scope, we'll let you know upfront so you can find the right specialist.",
     },
     {
       question: "How do the payments work?",
       answer:
-        "For fixed-price packages, we require 50% upfront to begin work and 50% upon completion. For custom projects, we work with milestone-based payments (typically 3-4 milestones). We accept bank transfers, credit cards, and PayPal. All pricing is transparent with no hidden fees—we'll clearly outline any additional costs like hosting or third-party services upfront.",
+        "For our Landing Page package, we require 30% upfront and 70% upon completion. For the MVP package, payment is split into three installments: 30% deposit to start, 30% at the midpoint of development, and 40% upon final delivery. For custom projects, we work with milestone-based payments. We accept bank transfers, credit cards, and PayPal. All pricing is transparent with no hidden fees. We'll clearly outline any additional costs like hosting or third-party services upfront.",
+    },
+    {
+      question:
+        "What if I don't have a clear idea or need help with technical strategy?",
+      answer:
+        "We're adaptable and willing to come up with founder-driven solutions for your startup. Whether you have a rough concept or need guidance on technical architecture and feature prioritization, we work closely with founders to refine ideas and build solutions that align with your business goals.",
     },
     {
       question: "What if I need changes during/after the service?",
       answer:
-        "Minor adjustments and reasonable revisions are included in all packages. For significant scope changes during development, we'll provide a transparent quote for additional work. After project completion, we offer maintenance packages starting at $500/month, or you can request one-off changes on an hourly basis. All projects include 30 days of bug fixes and minor tweaks at no additional cost.",
+        "Minor adjustments and reasonable revisions are included in all packages. For significant scope changes during development, we'll provide a transparent quote for additional work. After project completion, we offer maintenance packages starting at $500/month, or you can request one-off changes on an hourly basis.",
     },
   ];
 

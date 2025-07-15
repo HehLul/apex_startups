@@ -9,7 +9,7 @@ const Pricing = () => {
     {
       id: "landing-page",
       name: "Landing Page",
-      price: 1500,
+      price: 1200,
       description:
         "Perfect for pre-launch validation and building your waitlist",
       features: [
