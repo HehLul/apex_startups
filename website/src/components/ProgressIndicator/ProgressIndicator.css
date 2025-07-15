@@ -12,13 +12,13 @@
 }
 
 .progress-text {
-  color: white;
+  color: #1a1a1a;
   font-size: 0.875rem;
   font-weight: 500;
 }
 
 .progress-percentage {
-  color: rgba(255, 255, 255, 0.7);
+  color: #666666;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -26,7 +26,7 @@
 .progress-bar {
   width: 100%;
   height: 6px;
-  background: rgba(255, 255, 255, 0.1);
+  background: #e5e5e5;
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -34,7 +34,7 @@
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 100%);
+  background: linear-gradient(90deg, #1a1a1a 0%, #333333 100%);
   border-radius: 3px;
   transition: width 0.3s ease;
 }
@@ -57,8 +57,8 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: #f5f5f5;
+  border: 2px solid #d4d4d4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,35 +66,35 @@
   transition: all 0.3s ease;
   font-size: 0.875rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
+  color: #999999;
 }
 
 .progress-step.completed .step-circle {
-  background: white;
-  border-color: white;
-  color: #1a1a1a;
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: white;
 }
 
 .progress-step.current .step-circle {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: white;
-  color: white;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+  background: #f8f8f8;
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+  box-shadow: 0 0 0 4px rgba(26, 26, 26, 0.1);
 }
 
 .step-label {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: #999999;
   font-weight: 500;
   line-height: 1.2;
 }
 
 .progress-step.completed .step-label {
-  color: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
 }
 
 .progress-step.current .step-label {
-  color: white;
+  color: #1a1a1a;
   font-weight: 600;
 }
 
