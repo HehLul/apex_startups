@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./Page1.css";
-import ProgressIndicator from "../../../components/ProgressIndicator/ProgressIndicator";
+import { useNavigate } from "react-router-dom";
+import "./OnboardingStyles.css";
+import ProgressIndicator from "../../components/ProgressIndicator/ProgressIndicator";
 
 const Page1 = () => {
   const [formData, setFormData] = useState({
@@ -54,6 +55,7 @@ const Page1 = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const navigate = useNavigate();
   const handleNext = () => {
     if (validateForm()) {
       // Store form data in localStorage or send to API
@@ -61,7 +63,7 @@ const Page1 = () => {
 
       // Navigate to next page (you'll implement this routing)
       console.log("Form data saved:", formData);
-      alert("Form submitted! (Add routing to next page here)");
+      navigate("/onboarding2");
     }
   };
 
