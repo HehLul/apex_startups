@@ -138,7 +138,7 @@ const Page2 = () => {
             )}
           </div>
 
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="timeline">Timeline expectations *</label>
             <select
               id="timeline"
@@ -174,7 +174,7 @@ const Page2 = () => {
             {errors.budget && (
               <span className="error-message">{errors.budget}</span>
             )}
-          </div>
+          </div> */}
 
           <div className="form-section">
             <h3 className="section-title">Must-Have Features</h3>
@@ -233,13 +233,12 @@ const Page2 = () => {
                 className="file-input"
               />
               <div className="file-upload-content">
-                <div className="file-upload-icon">📎</div>
                 <div className="file-upload-text">
                   <strong>Click to upload</strong> or drag and drop
                 </div>
-                <div className="file-upload-formats">
+                {/* <div className="file-upload-formats">
                   PDF, PNG, JPG, DOCX, Figma links (Max 5 files, 10MB each)
-                </div>
+                </div> */}
               </div>
             </div>
             {formData.files.length > 0 && (

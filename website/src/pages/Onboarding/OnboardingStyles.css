@@ -47,6 +47,7 @@
 }
 
 .form-group {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
