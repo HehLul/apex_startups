@@ -14,12 +14,6 @@ export default function Hero() {
           <h1 className="hero-title">
             We Bring Your Startup Idea Into Reality
           </h1>
-          {/* <h1 className="hero-title">We Help Founders with the Technical</h1> */}
-
-          {/* <p className="hero-subtitle">
-            Complete software solutions for ambitious founders. Built fast,
-            built right. No technical headaches.
-          </p> */}
           <p className="hero-subtitle">
             Built with speed and precision. No technical headaches.
           </p>
@@ -52,11 +46,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="hero-social-proof">
-            {/* <p className="hero-social-proof-text">
-              Trusted by founders to build their first working prototypes
-            </p> */}
-          </div>
+          <div className="hero-social-proof"></div>
         </div>
 
         <div className="hero-visual">

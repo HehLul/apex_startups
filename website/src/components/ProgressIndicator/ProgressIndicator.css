@@ -1,0 +1,141 @@
+.progress-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 1rem;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress-text {
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.progress-percentage {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 100%);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.progress-step.completed .step-circle {
+  background: white;
+  border-color: white;
+  color: #1a1a1a;
+}
+
+.progress-step.current .step-circle {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: white;
+  color: white;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.step-label {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.progress-step.completed .step-label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-step.current .step-label {
+  color: white;
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .progress-steps {
+    gap: 0.5rem;
+  }
+
+  .step-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+
+  .step-label {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-steps {
+    gap: 0.25rem;
+  }
+
+  .step-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+
+  .step-label {
+    font-size: 0.65rem;
+    max-width: 60px;
+  }
+
+  .progress-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .progress-bar {
+    margin-bottom: 1.5rem;
+  }
+}
