@@ -69,7 +69,7 @@ const Page1 = () => {
 
   return (
     <div className="onboarding-container">
-      <ProgressIndicator currentStep={1} totalSteps={4} />
+      <ProgressIndicator currentStep={1} totalSteps={3} />
 
       <div className="onboarding-content">
         <div className="onboarding-header">

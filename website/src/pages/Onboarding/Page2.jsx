@@ -8,6 +8,8 @@ const Page2 = () => {
     description: "",
     timeline: "",
     budget: "",
+    mustHaveFeatures: "",
+    niceToHaveFeatures: "",
     files: [],
   });
   const [errors, setErrors] = useState({});
@@ -57,6 +59,13 @@ const Page2 = () => {
       newErrors.budget = "Please select your budget range";
     }
 
+    if (!formData.mustHaveFeatures?.trim()) {
+      newErrors.mustHaveFeatures = "Please list your core features";
+    } else if (formData.mustHaveFeatures.trim().length < 20) {
+      newErrors.mustHaveFeatures =
+        "Please provide more detail about your core features (minimum 20 characters)";
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -81,7 +90,7 @@ const Page2 = () => {
 
   return (
     <div className="onboarding-container">
-      <ProgressIndicator currentStep={2} totalSteps={4} />
+      <ProgressIndicator currentStep={2} totalSteps={3} />
 
       <div className="onboarding-content">
         <div className="onboarding-header">
@@ -165,6 +174,51 @@ const Page2 = () => {
             {errors.budget && (
               <span className="error-message">{errors.budget}</span>
             )}
+          </div>
+
+          <div className="form-section">
+            <h3 className="section-title">Must-Have Features</h3>
+
+            <div className="form-group">
+              <label htmlFor="mustHaveFeatures">
+                List the core features you absolutely need for launch *
+              </label>
+              <textarea
+                id="mustHaveFeatures"
+                value={formData.mustHaveFeatures || ""}
+                onChange={(e) =>
+                  handleInputChange("mustHaveFeatures", e.target.value)
+                }
+                placeholder="List the essential features your product needs to function."
+                rows="5"
+                className={errors.mustHaveFeatures ? "error" : ""}
+              />
+              <div className="character-count">
+                {(formData.mustHaveFeatures || "").length} characters (minimum
+                20)
+              </div>
+              {errors.mustHaveFeatures && (
+                <span className="error-message">{errors.mustHaveFeatures}</span>
+              )}
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="niceToHaveFeatures">
+                Nice-to-have features (Optional)
+              </label>
+              <textarea
+                id="niceToHaveFeatures"
+                value={formData.niceToHaveFeatures || ""}
+                onChange={(e) =>
+                  handleInputChange("niceToHaveFeatures", e.target.value)
+                }
+                placeholder="List features that would be great to have but aren't essential for the initial launch."
+                rows="4"
+              />
+              <div className="helper-text">
+                These features can be prioritized for future development phases
+              </div>
+            </div>
           </div>
 
           <div className="form-group">

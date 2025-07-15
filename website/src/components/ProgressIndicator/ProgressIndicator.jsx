@@ -48,8 +48,7 @@ const ProgressIndicator = ({ currentStep, totalSteps }) => {
             <div className="step-label">
               {index === 0 && "About You"}
               {index === 1 && "Your Project"}
-              {index === 2 && "Requirements"}
-              {index === 3 && "Schedule Call"}
+              {index === 2 && "Schedule Call"}
             </div>
           </div>
         ))}
