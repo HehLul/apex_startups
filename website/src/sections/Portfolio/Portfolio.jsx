@@ -7,6 +7,8 @@ import "./Portfolio.css";
 import image1 from "../../assets/hero_img_2.png";
 import image2 from "../../assets/hero_img_1.png";
 import image3 from "../../assets/hero_img_3.png";
+import image4 from "../../assets/img4.png";
+import image5 from "../../assets/img5.png";
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -37,88 +39,90 @@ const Portfolio = () => {
         "Custom AI training with natural language instructions",
         "Visual website customization tools",
         "One-click subdomain deployment",
-        "Monetization-ready chatbot hosting",
+        "Launch-ready chatbot hosting",
       ],
     },
     {
       id: 2,
-      title: "Business Analytics Dashboard",
-      subtitle: "Data Visualization Platform",
-      image: "/api/placeholder/400/300",
-      tags: ["Analytics", "Vue.js", "Python"],
-      metrics: "25% revenue increase for SMBs",
+      title: "Time Optimization Platform",
+      subtitle: "Premium landing page for productivity SaaS validation",
+      image: image3,
+      tags: ["Landing Page", "SaaS", "Validation", "React"],
+      metrics: "High-conversion landing page",
       overview:
-        "Created a comprehensive analytics platform that helped small businesses make data-driven decisions.",
+        "Designed and built a premium landing page to validate demand for a time optimization platform targeting high-performing professionals.",
       challenge:
-        "Small businesses lacked access to enterprise-level analytics tools and struggled to understand their data.",
+        "Entrepreneurs and executives struggle with time wastage and lack visibility into where their productive hours actually go, hindering their ability to optimize performance.",
       solution:
-        "Built an intuitive dashboard that transforms complex business data into actionable insights with beautiful visualizations.",
+        "Created a compelling pre-launch page showcasing a platform that would help users 'meticulously track and optimize every hour' through daily pattern analysis and personalized protocols.",
       results: [
-        "25% average revenue increase for clients",
-        "Reduced decision-making time by 50%",
-        "Used by 500+ small businesses",
+        "Premium design aesthetic that resonated with target audience",
+        "Successful email capture system implementation",
+        "Refined design process through multiple iterations",
       ],
-      techStack: ["Vue.js", "Python", "D3.js", "PostgreSQL", "AWS"],
-      timeline: "6 weeks",
+      techStack: ["React", "Supabase", "Resend API", "CSS"],
+      timeline: "4 weeks",
       features: [
-        "Real-time data visualization",
-        "Custom report generation",
-        "Predictive analytics",
-        "Multi-source data integration",
+        "Mobile app mockups (phone and tablet)",
+        "Problem-solution narrative flow",
+        "Email capture with Resend API integration",
+        "Dark, premium visual design",
       ],
     },
     {
       id: 3,
-      title: "Video Content Platform",
-      subtitle: "Curated Creator Streaming Service",
+      title: "FocusFeed",
+      subtitle:
+        "Curated YouTube experience to eliminate algorithmic distractions",
       image: image2,
-      tags: ["Video", "React", "AWS"],
-      metrics: "1M+ hours streamed",
+      tags: ["SaaS", "Media Platform", "Productivity", "In progress"],
+      metrics: "Work in progress",
       overview:
-        "Developed a specialized streaming platform for niche content creators and their dedicated audiences.",
+        "Building a platform that lets users curate their own YouTube feed by selecting specific creators and content types, eliminating algorithmic distractions and doomscrolling.",
       challenge:
-        "Content creators were losing their audience in the noise of large platforms and needed a dedicated space.",
+        "Users go to YouTube with specific intentions (documentaries, self-improvement) but get sidetracked by irrelevant algorithmic recommendations, leading to wasted time and lost focus.",
       solution:
-        "Created a curated video platform that connects creators directly with their most engaged followers.",
+        "Created FocusFeed - a curated YouTube experience where users choose exactly which creators and content types they want to see, maintaining focus on content that actually matters to them.",
       results: [
-        "1M+ hours of content streamed",
-        "90% creator retention rate",
-        "Average session time: 45 minutes",
+        "Core feed curation functionality implemented",
+        "YouTube API integration for content delivery",
+        "User-controlled content filtering system",
       ],
-      techStack: ["React", "Node.js", "AWS S3", "CloudFront", "Stripe"],
-      timeline: "8 weeks",
+      techStack: ["Next.js", "Supabase", "YouTube API", "Google OAuth"],
+      timeline: "Ongoing development",
       features: [
-        "Video streaming and processing",
-        "Creator monetization tools",
-        "Audience engagement features",
-        "Content recommendation engine",
+        "Custom creator selection and subscription",
+        "Content type filtering and categorization",
+        "Distraction-free viewing interface",
+        "User-controlled feed curation",
       ],
     },
     {
-      id: 4,
-      title: "Community Resource Hub",
-      subtitle: "Knowledge Sharing Platform",
-      image: image3,
-      tags: ["Community", "Next.js", "Firebase"],
-      metrics: "1,000+ active users",
+      id: 5,
+      title: "Contractor Analytics Platform",
+      subtitle:
+        "Landing page for AI-powered contractor performance benchmarking SaaS",
+      image: image5,
+      tags: ["Client Work", "Landing Page", "SaaS", "NextJS"],
+      metrics: "Client prototype delivery",
       overview:
-        "Built a centralized platform for community members to share and discover valuable resources.",
+        "Built a high-converting landing page for a SaaS founder's contractor analytics platform that would help contractors benchmark their performance against industry leaders using AI insights.",
       challenge:
-        "Community resources were scattered across different platforms, making discovery and sharing difficult.",
+        "Contractors lack visibility into how their business performance compares to industry benchmarks, leading to missed opportunities for profit optimization and growth.",
       solution:
-        "Developed a unified hub where community members could easily upload, categorize, and discover resources.",
+        "Created a compelling landing page showcasing an AI-powered platform that would analyze contractor data to identify profit leaks, optimize marketing spend, and provide scaling recommendations.",
       results: [
-        "1,000+ active monthly users",
-        "5,000+ resources shared",
-        "95% user satisfaction rate",
+        "Complete landing page delivered in one week",
+        "Professional copy and design created from scratch",
+        "Prototype successfully demonstrated service capabilities",
       ],
-      techStack: ["Next.js", "Firebase", "Tailwind CSS", "Algolia Search"],
-      timeline: "5 weeks",
+      techStack: ["Next.js", "CSS", "Supabase"],
+      timeline: "1 week",
       features: [
-        "Advanced search and filtering",
-        "User-generated content management",
-        "Community moderation tools",
-        "Mobile-first design",
+        "AI-powered performance benchmarking messaging",
+        "Free analysis lead magnet with 2-minute setup",
+        "Modern, professional design aesthetic",
+        "Industry-specific value propositions",
       ],
     },
   ];
@@ -138,7 +142,7 @@ const Portfolio = () => {
       <div className="portfolio-container">
         <div className="portfolio-header">
           <h2>Case Studies</h2>
-          <p>The proof is in the pudding ;)</p>
+          <p>Problem-solving in action</p>
         </div>
 
         <div className="projects-grid">

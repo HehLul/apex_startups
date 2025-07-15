@@ -9,7 +9,7 @@ const FAQ = () => {
     {
       question: "What is your onboarding process like?",
       answer:
-        "We start with a detailed discovery call to understand your vision, target audience, and business goals. Within 24 hours, you'll receive a project roadmap with timelines, milestones, and clear deliverables. We'll also set up communication channels and introduce you to your dedicated project team. The entire onboarding process takes 2-3 days, ensuring we're aligned before any development begins.",
+        "We start with a discovery call to understand your vision and goals. Within 24 hours, you'll receive a detailed project timeline and scope breakdown. Then we schedule a follow-up call to finalize details, explain pricing, and discuss the payment process. After that call, you'll receive a contract and can send your deposit to kick off development.",
     },
     {
       question: "What is your development process like?",
