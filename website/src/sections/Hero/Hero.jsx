@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import heroimg1 from "../../assets/hero_img_1.png";
 import heroimg2 from "../../assets/hero_img_2.png";
 import heroimg3 from "../../assets/hero_img_3.png";
@@ -38,7 +39,7 @@ export default function Hero() {
           </div>
 
           <div className="hero-cta">
-            <a href="#contact" className="hero-cta-primary">
+            <a href="/onboarding" className="hero-cta-primary">
               Get Started
             </a>
             <a href="#pricing" className="hero-cta-secondary">

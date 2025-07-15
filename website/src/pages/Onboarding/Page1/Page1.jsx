@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import "./Page1.css";
 import ProgressIndicator from "../../../components/ProgressIndicator/ProgressIndicator";
 
-const Page1 = ({ onNext, formData, setFormData }) => {
+const Page1 = () => {
+  const [formData, setFormData] = useState({
+    companyName: "",
+    role: "",
+    industry: "",
+    stage: "",
+    referralSource: "",
+  });
   const [errors, setErrors] = useState({});
 
   const handleInputChange = (field, value) => {
@@ -49,7 +56,12 @@ const Page1 = ({ onNext, formData, setFormData }) => {
 
   const handleNext = () => {
     if (validateForm()) {
-      onNext();
+      // Store form data in localStorage or send to API
+      localStorage.setItem("onboardingPage1", JSON.stringify(formData));
+
+      // Navigate to next page (you'll implement this routing)
+      console.log("Form data saved:", formData);
+      alert("Form submitted! (Add routing to next page here)");
     }
   };
 
@@ -69,7 +81,7 @@ const Page1 = ({ onNext, formData, setFormData }) => {
             <input
               type="text"
               id="companyName"
-              value={formData.companyName || ""}
+              value={formData.companyName}
               onChange={(e) => handleInputChange("companyName", e.target.value)}
               placeholder="Enter your company or project name"
               className={errors.companyName ? "error" : ""}
@@ -83,7 +95,7 @@ const Page1 = ({ onNext, formData, setFormData }) => {
             <label htmlFor="role">Your role *</label>
             <select
               id="role"
-              value={formData.role || ""}
+              value={formData.role}
               onChange={(e) => handleInputChange("role", e.target.value)}
               className={errors.role ? "error" : ""}
             >
@@ -105,7 +117,7 @@ const Page1 = ({ onNext, formData, setFormData }) => {
             <input
               type="text"
               id="industry"
-              value={formData.industry || ""}
+              value={formData.industry}
               onChange={(e) => handleInputChange("industry", e.target.value)}
               placeholder="e.g., FinTech, E-commerce, SaaS, Healthcare"
               className={errors.industry ? "error" : ""}
@@ -119,7 +131,7 @@ const Page1 = ({ onNext, formData, setFormData }) => {
             <label htmlFor="stage">Company stage *</label>
             <select
               id="stage"
-              value={formData.stage || ""}
+              value={formData.stage}
               onChange={(e) => handleInputChange("stage", e.target.value)}
               className={errors.stage ? "error" : ""}
             >
@@ -138,7 +150,7 @@ const Page1 = ({ onNext, formData, setFormData }) => {
             <label htmlFor="referralSource">How did you hear about us? *</label>
             <select
               id="referralSource"
-              value={formData.referralSource || ""}
+              value={formData.referralSource}
               onChange={(e) =>
                 handleInputChange("referralSource", e.target.value)
               }
