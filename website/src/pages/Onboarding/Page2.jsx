@@ -29,14 +29,6 @@ const Page2 = () => {
     }
   };
 
-  const handleFileUpload = (e) => {
-    const selectedFiles = Array.from(e.target.files);
-    setFormData((prev) => ({
-      ...prev,
-      files: selectedFiles,
-    }));
-  };
-
   const validateForm = () => {
     const newErrors = {};
 
@@ -49,14 +41,6 @@ const Page2 = () => {
     } else if (formData.description.trim().length < 50) {
       newErrors.description =
         "Please provide a more detailed description (minimum 50 characters)";
-    }
-
-    if (!formData.timeline) {
-      newErrors.timeline = "Please select your timeline expectations";
-    }
-
-    if (!formData.budget) {
-      newErrors.budget = "Please select your budget range";
     }
 
     if (!formData.mustHaveFeatures?.trim()) {
@@ -177,7 +161,7 @@ const Page2 = () => {
           </div> */}
 
           <div className="form-section">
-            <h3 className="section-title">Must-Have Features</h3>
+            <h3 className="section-title">Features</h3>
 
             <div className="form-group">
               <label htmlFor="mustHaveFeatures">
@@ -219,40 +203,6 @@ const Page2 = () => {
                 These features can be prioritized for future development phases
               </div>
             </div>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="files">Upload supporting files (Optional)</label>
-            <div className="file-upload-area">
-              <input
-                type="file"
-                id="files"
-                multiple
-                accept=".pdf,.png,.jpg,.jpeg,.docx,.fig"
-                onChange={handleFileUpload}
-                className="file-input"
-              />
-              <div className="file-upload-content">
-                <div className="file-upload-text">
-                  <strong>Click to upload</strong> or drag and drop
-                </div>
-                {/* <div className="file-upload-formats">
-                  PDF, PNG, JPG, DOCX, Figma links (Max 5 files, 10MB each)
-                </div> */}
-              </div>
-            </div>
-            {formData.files.length > 0 && (
-              <div className="uploaded-files">
-                <strong>Selected files:</strong>
-                <ul>
-                  {formData.files.map((file, index) => (
-                    <li key={index}>
-                      {file.name} ({Math.round(file.size / 1024)}KB)
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </div>
         </form>
 

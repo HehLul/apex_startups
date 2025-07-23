@@ -35,10 +35,6 @@ const Page1 = () => {
       newErrors.companyName = "Company/Project name is required";
     }
 
-    if (!formData.role) {
-      newErrors.role = "Please select your role";
-    }
-
     if (!formData.industry?.trim()) {
       newErrors.industry = "Industry/Market is required";
     }
@@ -94,27 +90,6 @@ const Page1 = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="role">Your role *</label>
-            <select
-              id="role"
-              value={formData.role}
-              onChange={(e) => handleInputChange("role", e.target.value)}
-              className={errors.role ? "error" : ""}
-            >
-              <option value="">Select your role</option>
-              <option value="founder">Founder</option>
-              <option value="cto">CTO</option>
-              <option value="product-manager">Product Manager</option>
-              <option value="entrepreneur">Entrepreneur</option>
-              <option value="business-owner">Business Owner</option>
-              <option value="other">Other</option>
-            </select>
-            {errors.role && (
-              <span className="error-message">{errors.role}</span>
-            )}
-          </div>
-
-          <div className="form-group">
             <label htmlFor="industry">Industry/Market *</label>
             <input
               type="text"
@@ -128,7 +103,6 @@ const Page1 = () => {
               <span className="error-message">{errors.industry}</span>
             )}
           </div>
-
           <div className="form-group">
             <label htmlFor="stage">Company stage *</label>
             <select
@@ -147,7 +121,6 @@ const Page1 = () => {
               <span className="error-message">{errors.stage}</span>
             )}
           </div>
-
           <div className="form-group">
             <label htmlFor="referralSource">How did you hear about us? *</label>
             <select
