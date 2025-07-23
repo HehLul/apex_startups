@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./OnboardingStyles.css";
 import ProgressIndicator from "../../components/ProgressIndicator/ProgressIndicator";
@@ -62,6 +62,20 @@ const Page1 = () => {
       navigate("/onboarding2");
     }
   };
+
+  useEffect(() => {
+    // Load saved data from localStorage when component mounts
+    const savedPage1Data = localStorage.getItem("onboardingPage1");
+    const savedPage2Data = localStorage.getItem("onboardingPage2");
+    if (savedPage1Data) {
+      const parsedData = JSON.parse(savedPage1Data);
+      setFormData(parsedData); // This will populate your Page 1 form fields
+    }
+    // Optional: If you want to preserve page 2 data when going back
+    if (savedPage2Data) {
+      console.log("Page 2 data available:", JSON.parse(savedPage2Data));
+    }
+  }, []);
 
   return (
     <div className="onboarding-container">
