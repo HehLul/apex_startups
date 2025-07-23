@@ -72,17 +72,20 @@ const Page3 = () => {
 
       <div className="onboarding-content booking-page">
         <div className="onboarding-header">
-          <h1>Let's discuss your project</h1>
-          <p>Choose how you'd like to get started with your project details</p>
+          <h1>Let's Get You Onboard!</h1>
+          <p>
+            Book a 30-minute call to discuss your requirements and begin the
+            onboarding process
+          </p>
         </div>
 
         {/* Call Booking Section */}
         <div className="booking-section">
           <div className="booking-option">
             <div className="option-header">
-              <h3>📞 Schedule a Strategy Call</h3>
+              <h3>Schedule a Strategy Call</h3>
               <p>
-                Book a 15-minute call to discuss your requirements and get
+                Book a 30-minute call to discuss your requirements and get
                 immediate feedback
               </p>
               <div className="benefits">
@@ -186,15 +189,6 @@ const Page3 = () => {
                 </p>
               </div>
             )}
-          </div>
-        </div>
-
-        {/* Social Proof */}
-        <div className="social-proof">
-          <p>🚀 Join 50+ founders who've launched with ApexStartups</p>
-          <div className="rating">
-            <span>⭐⭐⭐⭐⭐</span>
-            <span>Average call rating: 4.9/5 stars</span>
           </div>
         </div>
 

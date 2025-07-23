@@ -249,3 +249,297 @@
     padding: 1.5rem 1rem;
   }
 }
+
+/* Add these styles to your existing OnboardingStyles.css file */
+
+/* Progress Indicator */
+.progress-indicator {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  background: #e5e5e5;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0 auto 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #1a1a1a;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  color: #666666;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Booking Page Specific Styles */
+.booking-page {
+  max-width: 800px;
+}
+
+.booking-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.booking-option {
+  background: #f8f8f8;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.booking-option:hover {
+  border-color: #d4d4d4;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.option-header {
+  margin-bottom: 1.5rem;
+}
+
+.option-header h3 {
+  color: #1a1a1a;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.option-header p {
+  color: #666666;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.benefit {
+  background: white;
+  color: #1a1a1a;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #e5e5e5;
+}
+
+/* Calendly Container */
+.calendly-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.calendly-inline-widget {
+  border-radius: 12px;
+}
+
+/* Option Divider */
+.option-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.option-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e5e5e5;
+  z-index: 1;
+}
+
+.option-divider span {
+  background: #fafafa;
+  color: #999999;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+  z-index: 2;
+  position: relative;
+  border: 1px solid #e5e5e5;
+}
+
+/* Email Form */
+.email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-email-submit {
+  background: #1a1a1a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn-email-submit:hover {
+  background: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-email-submit:disabled {
+  background: #999999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.email-disclaimer {
+  color: #666666;
+  font-size: 0.875rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* Email Success State */
+.email-success {
+  text-align: center;
+  padding: 2rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.email-success h4 {
+  color: #166534;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.email-success p {
+  color: #15803d;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.next-steps {
+  background: white;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+}
+
+.next-steps strong {
+  color: #166534;
+}
+
+/* Social Proof */
+.social-proof {
+  text-align: center;
+  margin: 3rem 0 2rem;
+  padding: 1.5rem;
+  background: #f8f8f8;
+  border-radius: 12px;
+  border: 1px solid #e5e5e5;
+}
+
+.social-proof p {
+  color: #1a1a1a;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #666666;
+  font-size: 0.875rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .booking-page {
+    max-width: 100%;
+  }
+
+  .booking-option {
+    padding: 1.5rem;
+  }
+
+  .calendly-inline-widget {
+    min-width: 100% !important;
+    height: 400px !important;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .benefits {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-email-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-option {
+    padding: 1rem;
+  }
+
+  .option-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .calendly-inline-widget {
+    height: 350px !important;
+  }
+
+  .social-proof {
+    margin: 2rem 0 1rem;
+    padding: 1rem;
+  }
+
+  .rating {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
