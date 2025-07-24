@@ -64,7 +64,7 @@ const Page3 = () => {
   const navigate = useNavigate();
   const handleBack = () => {
     // Navigate back to page 2
-    navigate("/onboarding2");
+    navigate("/projectdetails");
   };
   const handleDone = () => {
     navigate("/success");

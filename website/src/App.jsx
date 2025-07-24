@@ -12,9 +12,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/onboarding" element={<Page1 />} />
-          <Route path="/onboarding2" element={<Page2 />} />
-          <Route path="/onboarding3" element={<Page3 />} />
+          <Route path="/getstarted" element={<Page1 />} />
+          <Route path="/projectdetails" element={<Page2 />} />
+          <Route path="/onboard" element={<Page3 />} />
           <Route path="/success" element={<SuccessPage />} />
         </Routes>
       </Router>

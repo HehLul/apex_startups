@@ -65,7 +65,7 @@ const Page1 = () => {
 
       // Navigate to next page (you'll implement this routing)
       console.log("Form data saved:", formData);
-      navigate("/onboarding2");
+      navigate("/projectdetails");
     }
   };
   const handleBack = () => {
