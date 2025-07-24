@@ -227,21 +227,33 @@
 
 /* Responsive Design */
 @media (max-width: 968px) {
-  /* .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+  .hero-container {
+    margin-top: 10rem;
+    gap: 14rem;
     text-align: center;
-  } */
+  }
   .hero-container {
     padding: 0 1rem;
     display: flex;
     flex-direction: column-reverse;
   }
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .hero-title {
     font-size: 3rem;
+    text-align: center;
   }
 
+  /* .hero-features,
+  .hero-subtitle {
+    align-items: center;
+    text-align: center;
+    align-self: center;
+  } */
   .hero-visual {
     order: -1;
   }
