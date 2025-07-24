@@ -1,8 +1,10 @@
 // ProjectModal.jsx
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./ProjectModal.css";
 
 const ProjectModal = ({ project, isOpen, onClose }) => {
+  const navigate = useNavigate();
   // Handle escape key press
   useEffect(() => {
     const handleEscape = (e) => {
@@ -23,6 +25,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
   }, [isOpen, onClose]);
 
   if (!isOpen || !project) return null;
+  const handleGetStarted = () => {
+    navigate("/getstarted");
+  };
 
   return (
     <div className="project-modal-overlay" onClick={onClose}>
@@ -111,7 +116,9 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             <section className="case-study-cta">
               <h2>Ready to Build Your Vision?</h2>
               <p>Let's create something amazing together.</p>
-              <button className="cta-button">Get Started</button>
+              <button className="cta-button" onClick={handleGetStarted}>
+                Get Started
+              </button>
             </section>
           </div>
         </div>

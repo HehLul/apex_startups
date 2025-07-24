@@ -93,8 +93,11 @@ const Page1 = () => {
 
       <div className="onboarding-content">
         <div className="onboarding-header">
-          <h1>Let's get to know you</h1>
-          <p>Help us understand your background and project needs</p>
+          <h1>Let's bring your startup to life!</h1>
+          <p>
+            We'll need a few details to get started and provide you with the
+            best solution
+          </p>
         </div>
 
         <form className="onboarding-form">

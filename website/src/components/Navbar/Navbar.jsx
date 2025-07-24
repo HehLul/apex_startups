@@ -1,5 +1,6 @@
 // Updated Navbar.jsx
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo_main.png";
 import Burger from "./Burger/Burger";
 import MobileMenu from "./MobileMenu/MobileMenu";
@@ -33,6 +34,11 @@ export default function Navbar() {
     };
   }, [open]);
 
+  const navigate = useNavigate();
+  const handleGetStarted = () => {
+    navigate("/getstarted");
+  };
+
   return (
     <>
       <div className="navbar">
@@ -63,7 +69,7 @@ export default function Navbar() {
           </nav>
 
           <div className="navbar-cta">
-            <a href="#contact" className="navbar-cta-button">
+            <a onClick={handleGetStarted} className="navbar-cta-button">
               Get Started
             </a>
           </div>

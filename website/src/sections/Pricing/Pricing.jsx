@@ -1,9 +1,11 @@
 // Pricing.jsx
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Pricing.css";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
+  const navigate = useNavigate();
 
   const pricingPlans = [
     {
@@ -57,6 +59,10 @@ const Pricing = () => {
       additionalCosts: null,
     },
   ];
+
+  const handleGetStarted = () => {
+    navigate("/getstarted");
+  };
 
   return (
     <section className="pricing" id="pricing">
@@ -119,6 +125,7 @@ const Pricing = () => {
                   className={`pricing-cta ${
                     plan.popular ? "pricing-cta-popular" : ""
                   }`}
+                  onClick={handleGetStarted}
                 >
                   {plan.cta}
                 </button>
@@ -131,7 +138,9 @@ const Pricing = () => {
           <p>All packages include full source code ownership.</p>
           <p>
             Need something different?{" "}
-            <a href="#contact">Let's discuss your specific requirements.</a>
+            <a onClick={handleGetStarted}>
+              Let's discuss your specific requirements.
+            </a>
           </p>
         </div>
       </div>
