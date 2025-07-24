@@ -292,17 +292,17 @@
 }
 
 .booking-option {
-  background: #f8f8f8;
-  border: 1px solid #e5e5e5;
+  /* background: #f8f8f8; */
+  /* border: 1px solid #e5e5e5; */
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;
 }
-
+/* 
 .booking-option:hover {
   border-color: #d4d4d4;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
+} */
 
 .option-header {
   margin-bottom: 1.5rem;
@@ -504,7 +504,7 @@
 
   .calendly-inline-widget {
     min-width: 100% !important;
-    height: 400px !important;
+    height: 600px !important;
   }
 
   .form-row {
@@ -526,13 +526,17 @@
   .booking-option {
     padding: 1rem;
   }
-
+  .onboarding-header {
+    margin-bottom: 0;
+  }
   .option-header h3 {
     font-size: 1.1rem;
   }
-
+  .booking-option .benefits {
+    display: none;
+  }
   .calendly-inline-widget {
-    height: 350px !important;
+    height: 600px !important;
   }
 
   .social-proof {

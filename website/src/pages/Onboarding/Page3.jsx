@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ProgressIndicator from "../../components/ProgressIndicator/ProgressIndicator";
+import LoadScreen from "../../components/LoadScreen/LoadScreen";
 const Page3 = () => {
   const [emailData, setEmailData] = useState({
     email: "",
@@ -71,52 +72,55 @@ const Page3 = () => {
   };
 
   return (
-    <div className="onboarding-container">
-      <ProgressIndicator currentStep={3} totalSteps={3} />
+    <>
+      <LoadScreen delay={1000}></LoadScreen>
+      <div className="onboarding-container">
+        <ProgressIndicator currentStep={3} totalSteps={3} />
 
-      <div className="onboarding-content booking-page">
-        <div className="onboarding-header">
-          <h1>Let's Get You Onboard!</h1>
-          <p>
-            Book a 30-minute call to discuss your requirements and begin the
-            onboarding process
-          </p>
-        </div>
+        <div className="onboarding-content booking-page">
+          <div className="onboarding-header">
+            <h1>Let's Get You Onboard!</h1>
+            <p>
+              Book a 30-minute call to discuss your requirements and begin the
+              onboarding process
+            </p>
+          </div>
 
-        {/* Call Booking Section */}
-        <div className="booking-section">
-          <div className="booking-option">
-            <div className="option-header">
-              <div className="benefits">
-                <span className="benefit">✓ Immediate project feedback</span>
-                <span className="benefit">
-                  ✓ Technical feasibility discussion
-                </span>
-                <span className="benefit">✓ Proposal within 24 hours</span>
+          {/* Call Booking Section */}
+          <div className="booking-section">
+            <div className="booking-option">
+              <div className="option-header">
+                <div className="benefits">
+                  <span className="benefit">✓ Immediate project feedback</span>
+                  <span className="benefit">
+                    ✓ Technical feasibility discussion
+                  </span>
+                  <span className="benefit">✓ Proposal within 24 hours</span>
+                </div>
+              </div>
+
+              <div className="calendly-container">
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/amdsalman04/30min"
+                  style={{ minWidth: "100%", height: "500px" }}
+                ></div>
               </div>
             </div>
+          </div>
 
-            <div className="calendly-container">
-              <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/amdsalman04/30min"
-                style={{ minWidth: "100%", height: "500px" }}
-              ></div>
-            </div>
+          {/* Back Button */}
+          <div className="form-actions">
+            <button onClick={handleBack} className="btn-back">
+              ← Back to Project Details
+            </button>
+            <button onClick={handleDone} className="btn-next">
+              Complete
+            </button>
           </div>
         </div>
-
-        {/* Back Button */}
-        <div className="form-actions">
-          <button onClick={handleBack} className="btn-back">
-            ← Back to Project Details
-          </button>
-          <button onClick={handleDone} className="btn-next">
-            Complete
-          </button>
-        </div>
       </div>
-    </div>
+    </>
   );
 };
 
