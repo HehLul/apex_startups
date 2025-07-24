@@ -68,8 +68,12 @@ const Page1 = () => {
       navigate("/onboarding2");
     }
   };
+  const handleBack = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     // Load saved data from localStorage when component mounts
     const savedPage1Data = localStorage.getItem("onboardingPage1");
     const savedPage2Data = localStorage.getItem("onboardingPage2");
@@ -181,6 +185,9 @@ const Page1 = () => {
         </form>
 
         <div className="form-actions">
+          <button className="btn-back" onClick={handleBack}>
+            Back to Home
+          </button>
           <button type="button" className="btn-next" onClick={handleNext}>
             Continue
             <span className="arrow">→</span>

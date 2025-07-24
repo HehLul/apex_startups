@@ -10,6 +10,7 @@ const Page3 = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     // Load Calendly script
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
@@ -66,7 +67,7 @@ const Page3 = () => {
     navigate("/onboarding2");
   };
   const handleDone = () => {
-    navigate("/successpage");
+    navigate("/success");
   };
 
   return (

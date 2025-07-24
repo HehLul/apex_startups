@@ -75,6 +75,7 @@ const Page2 = () => {
 
   // In Page 1 component
   useEffect(() => {
+    window.scrollTo(0, 0);
     const savedPage1Data = localStorage.getItem("onboardingPage1");
     const savedPage2Data = localStorage.getItem("onboardingPage2");
 
