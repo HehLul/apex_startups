@@ -5,6 +5,7 @@ import ProgressIndicator from "../../components/ProgressIndicator/ProgressIndica
 
 const Page1 = () => {
   const [formData, setFormData] = useState({
+    email: "",
     companyName: "",
     role: "",
     industry: "",
@@ -31,6 +32,11 @@ const Page1 = () => {
   const validateForm = () => {
     const newErrors = {};
 
+    if (!formData.email?.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
     if (!formData.companyName?.trim()) {
       newErrors.companyName = "Company/Project name is required";
     }
@@ -88,6 +94,20 @@ const Page1 = () => {
         </div>
 
         <form className="onboarding-form">
+          <div className="form-group priority-field">
+            <label htmlFor="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              value={formData.email}
+              onChange={(e) => handleInputChange("email", e.target.value)}
+              placeholder="your@email.com"
+              className={errors.email ? "error" : ""}
+            />
+            {errors.email && (
+              <span className="error-message">{errors.email}</span>
+            )}
+          </div>
           <div className="form-group">
             <label htmlFor="companyName">Company/Project name *</label>
             <input

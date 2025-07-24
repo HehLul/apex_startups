@@ -65,6 +65,9 @@ const Page3 = () => {
     // Navigate back to page 2
     navigate("/onboarding2");
   };
+  const handleDone = () => {
+    navigate("/successpage");
+  };
 
   return (
     <div className="onboarding-container">
@@ -107,7 +110,7 @@ const Page3 = () => {
           <button onClick={handleBack} className="btn-back">
             ← Back to Project Details
           </button>
-          <button onClick={handleBack} className="btn-next">
+          <button onClick={handleDone} className="btn-next">
             Complete
           </button>
         </div>

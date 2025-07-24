@@ -62,7 +62,8 @@ const Page2 = () => {
 
       // Navigate to next page (you'll implement this routing)
       console.log("Page 2 form data saved:", formData);
-      alert("Form submitted! (Add routing to next page here)");
+      //   alert("Form submitted! (Add routing to next page here)");
+      navigate("/onboarding3");
     }
   };
 
