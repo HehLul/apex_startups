@@ -4,6 +4,11 @@ import heroimg2 from "../../assets/hero_img_2.png";
 import heroimg3 from "../../assets/hero_img_3.png";
 import "./Hero.css";
 export default function Hero() {
+  const navigate = useNavigate();
+  const handleGetStarted = () => {
+    navigate("/getstarted");
+  };
+
   return (
     <section className="hero">
       <div className="hero-container">
@@ -39,7 +44,7 @@ export default function Hero() {
           </div>
 
           <div className="hero-cta">
-            <a href="/onboarding" className="hero-cta-primary">
+            <a onClick={handleGetStarted} className="hero-cta-primary">
               Get Started
             </a>
             <a href="#pricing" className="hero-cta-secondary">

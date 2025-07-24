@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo_main.png";
-const LoadScreen = ({ delay = 1000 }) => {
+const LoadScreen = ({ delay = 1000, text = "" }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [progress, setProgress] = useState(0);
 
@@ -43,6 +43,7 @@ const LoadScreen = ({ delay = 1000 }) => {
               style={{ width: `${progress}%` }}
             ></div>
           </div>
+          <p>{text}</p>
         </div>
       </div>
 
@@ -72,6 +73,9 @@ const LoadScreen = ({ delay = 1000 }) => {
           flex-direction: column;
           align-items: center;
           gap: 2rem;
+        }
+        .load-screen .load-screen-content p {
+          margin-top: -1.5rem;
         }
 
         .load-screen .logo {
