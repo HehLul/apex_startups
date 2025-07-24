@@ -90,7 +90,7 @@ const Page1 = () => {
 
   return (
     <>
-      <LoadScreen delay={3000} />
+      <LoadScreen delay={1500} />
       <div className="onboarding-container">
         <ProgressIndicator currentStep={1} totalSteps={3} />
 

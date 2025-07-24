@@ -75,6 +75,7 @@ const LoadScreen = ({ delay = 1000 }) => {
         }
 
         .load-screen .logo {
+          max-width: 400px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -152,10 +153,8 @@ const LoadScreen = ({ delay = 1000 }) => {
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
-          .load-screen .logo-triangle {
-            border-left-width: 20px;
-            border-right-width: 20px;
-            border-bottom-width: 35px;
+          .load-screen .logo {
+            max-width: 200px;
           }
 
           .load-screen .progress-container {

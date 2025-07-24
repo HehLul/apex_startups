@@ -1,9 +1,15 @@
 // MobileMenu.jsx
 import React from "react";
 import "./MobileMenu.css";
+import { useNavigate } from "react-router-dom";
 const MobileMenu = ({ open, setOpen }) => {
   const handleLinkClick = () => {
     setOpen(false);
+  };
+
+  const navigate = useNavigate();
+  const handleGetStarted = () => {
+    navigate("/getstarted");
   };
 
   return (
@@ -17,7 +23,7 @@ const MobileMenu = ({ open, setOpen }) => {
       <a href="#faq" onClick={handleLinkClick}>
         FAQ
       </a>
-      <a href="#contact" onClick={handleLinkClick} className="mobile-menu-cta">
+      <a onClick={handleGetStarted} className="mobile-menu-cta">
         Get Started
       </a>
     </nav>
