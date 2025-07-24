@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./OnboardingStyles.css";
 import ProgressIndicator from "../../components/ProgressIndicator/ProgressIndicator";
+import LoadScreen from "../../components/LoadScreen/LoadScreen";
 
 const Page1 = () => {
   const [formData, setFormData] = useState({
@@ -88,116 +89,123 @@ const Page1 = () => {
   }, []);
 
   return (
-    <div className="onboarding-container">
-      <ProgressIndicator currentStep={1} totalSteps={3} />
+    <>
+      <LoadScreen delay={3000} />
+      <div className="onboarding-container">
+        <ProgressIndicator currentStep={1} totalSteps={3} />
 
-      <div className="onboarding-content">
-        <div className="onboarding-header">
-          <h1>Let's bring your startup to life!</h1>
-          <p>
-            We'll need a few details to get started and provide you with the
-            best solution
-          </p>
-        </div>
-
-        <form className="onboarding-form">
-          <div className="form-group priority-field">
-            <label htmlFor="email">Email *</label>
-            <input
-              type="email"
-              id="email"
-              value={formData.email}
-              onChange={(e) => handleInputChange("email", e.target.value)}
-              placeholder="your@email.com"
-              className={errors.email ? "error" : ""}
-            />
-            {errors.email && (
-              <span className="error-message">{errors.email}</span>
-            )}
-          </div>
-          <div className="form-group">
-            <label htmlFor="companyName">Company/Project name *</label>
-            <input
-              type="text"
-              id="companyName"
-              value={formData.companyName}
-              onChange={(e) => handleInputChange("companyName", e.target.value)}
-              placeholder="Enter your company or project name"
-              className={errors.companyName ? "error" : ""}
-            />
-            {errors.companyName && (
-              <span className="error-message">{errors.companyName}</span>
-            )}
+        <div className="onboarding-content">
+          <div className="onboarding-header">
+            <h1>Let's bring your startup to life!</h1>
+            <p>
+              We'll need a few details to get started and provide you with the
+              best solution
+            </p>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="industry">Industry/Market *</label>
-            <input
-              type="text"
-              id="industry"
-              value={formData.industry}
-              onChange={(e) => handleInputChange("industry", e.target.value)}
-              placeholder="e.g., FinTech, E-commerce, SaaS, Healthcare"
-              className={errors.industry ? "error" : ""}
-            />
-            {errors.industry && (
-              <span className="error-message">{errors.industry}</span>
-            )}
-          </div>
-          <div className="form-group">
-            <label htmlFor="stage">Company stage *</label>
-            <select
-              id="stage"
-              value={formData.stage}
-              onChange={(e) => handleInputChange("stage", e.target.value)}
-              className={errors.stage ? "error" : ""}
-            >
-              <option value="">Select your stage</option>
-              <option value="idea">Idea</option>
-              <option value="pre-launch">Pre-launch</option>
-              <option value="early-stage">Early stage</option>
-              <option value="growing">Growing</option>
-            </select>
-            {errors.stage && (
-              <span className="error-message">{errors.stage}</span>
-            )}
-          </div>
-          <div className="form-group">
-            <label htmlFor="referralSource">How did you hear about us? *</label>
-            <select
-              id="referralSource"
-              value={formData.referralSource}
-              onChange={(e) =>
-                handleInputChange("referralSource", e.target.value)
-              }
-              className={errors.referralSource ? "error" : ""}
-            >
-              <option value="">Select source</option>
-              <option value="google">Google search</option>
-              <option value="linkedin">LinkedIn</option>
-              <option value="twitter">Twitter/X</option>
-              <option value="reddit">Reddit</option>
-              <option value="referral">Referral from a friend</option>
-              <option value="portfolio">Portfolio/case study</option>
-              <option value="other">Other</option>
-            </select>
-            {errors.referralSource && (
-              <span className="error-message">{errors.referralSource}</span>
-            )}
-          </div>
-        </form>
+          <form className="onboarding-form">
+            <div className="form-group priority-field">
+              <label htmlFor="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                value={formData.email}
+                onChange={(e) => handleInputChange("email", e.target.value)}
+                placeholder="your@email.com"
+                className={errors.email ? "error" : ""}
+              />
+              {errors.email && (
+                <span className="error-message">{errors.email}</span>
+              )}
+            </div>
+            <div className="form-group">
+              <label htmlFor="companyName">Company/Project name *</label>
+              <input
+                type="text"
+                id="companyName"
+                value={formData.companyName}
+                onChange={(e) =>
+                  handleInputChange("companyName", e.target.value)
+                }
+                placeholder="Enter your company or project name"
+                className={errors.companyName ? "error" : ""}
+              />
+              {errors.companyName && (
+                <span className="error-message">{errors.companyName}</span>
+              )}
+            </div>
 
-        <div className="form-actions">
-          <button className="btn-back" onClick={handleBack}>
-            Back to Home
-          </button>
-          <button type="button" className="btn-next" onClick={handleNext}>
-            Continue
-            <span className="arrow">→</span>
-          </button>
+            <div className="form-group">
+              <label htmlFor="industry">Industry/Market *</label>
+              <input
+                type="text"
+                id="industry"
+                value={formData.industry}
+                onChange={(e) => handleInputChange("industry", e.target.value)}
+                placeholder="e.g., FinTech, E-commerce, SaaS, Healthcare"
+                className={errors.industry ? "error" : ""}
+              />
+              {errors.industry && (
+                <span className="error-message">{errors.industry}</span>
+              )}
+            </div>
+            <div className="form-group">
+              <label htmlFor="stage">Company stage *</label>
+              <select
+                id="stage"
+                value={formData.stage}
+                onChange={(e) => handleInputChange("stage", e.target.value)}
+                className={errors.stage ? "error" : ""}
+              >
+                <option value="">Select your stage</option>
+                <option value="idea">Idea</option>
+                <option value="pre-launch">Pre-launch</option>
+                <option value="early-stage">Early stage</option>
+                <option value="growing">Growing</option>
+              </select>
+              {errors.stage && (
+                <span className="error-message">{errors.stage}</span>
+              )}
+            </div>
+            <div className="form-group">
+              <label htmlFor="referralSource">
+                How did you hear about us? *
+              </label>
+              <select
+                id="referralSource"
+                value={formData.referralSource}
+                onChange={(e) =>
+                  handleInputChange("referralSource", e.target.value)
+                }
+                className={errors.referralSource ? "error" : ""}
+              >
+                <option value="">Select source</option>
+                <option value="google">Google search</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="twitter">Twitter/X</option>
+                <option value="reddit">Reddit</option>
+                <option value="referral">Referral from a friend</option>
+                <option value="portfolio">Portfolio/case study</option>
+                <option value="other">Other</option>
+              </select>
+              {errors.referralSource && (
+                <span className="error-message">{errors.referralSource}</span>
+              )}
+            </div>
+          </form>
+
+          <div className="form-actions">
+            <button className="btn-back" onClick={handleBack}>
+              Back to Home
+            </button>
+            <button type="button" className="btn-next" onClick={handleNext}>
+              Continue
+              <span className="arrow">→</span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
