@@ -83,11 +83,6 @@ const Page3 = () => {
         <div className="booking-section">
           <div className="booking-option">
             <div className="option-header">
-              <h3>Schedule a Strategy Call</h3>
-              <p>
-                Book a 30-minute call to discuss your requirements and get
-                immediate feedback
-              </p>
               <div className="benefits">
                 <span className="benefit">✓ Immediate project feedback</span>
                 <span className="benefit">
@@ -105,97 +100,15 @@ const Page3 = () => {
               ></div>
             </div>
           </div>
-
-          {/* Divider */}
-          <div className="option-divider">
-            <span>OR</span>
-          </div>
-
-          {/* Email Option Section */}
-          <div className="booking-option">
-            <div className="option-header">
-              <h3>📧 Get Details via Email</h3>
-              <p>
-                Prefer to review everything at your own pace? We'll send you a
-                detailed breakdown.
-              </p>
-              <div className="benefits">
-                <span className="benefit">✓ Detailed written estimate</span>
-                <span className="benefit">✓ Timeline breakdown</span>
-                <span className="benefit">✓ Similar project examples</span>
-              </div>
-            </div>
-
-            {!emailSubmitted ? (
-              <div className="email-form">
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={emailData.name}
-                      onChange={(e) =>
-                        setEmailData((prev) => ({
-                          ...prev,
-                          name: e.target.value,
-                        }))
-                      }
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={emailData.email}
-                      onChange={(e) =>
-                        setEmailData((prev) => ({
-                          ...prev,
-                          email: e.target.value,
-                        }))
-                      }
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-                </div>
-                <button
-                  onClick={handleEmailSubmit}
-                  className="btn-email-submit"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Sending..." : "Send My Project Details"}
-                </button>
-                <p className="email-disclaimer">
-                  We'll send your custom estimate within 24 hours
-                </p>
-              </div>
-            ) : (
-              <div className="email-success">
-                <div className="success-icon">✅</div>
-                <h4>Email Sent Successfully!</h4>
-                <p>
-                  We've received your information and will send you a detailed
-                  project estimate within 24 hours.
-                </p>
-                <p className="next-steps">
-                  <strong>What's next?</strong>
-                  <br />
-                  Check your email for our initial project breakdown and feel
-                  free to schedule a call anytime if you have questions.
-                </p>
-              </div>
-            )}
-          </div>
         </div>
 
         {/* Back Button */}
         <div className="form-actions">
           <button onClick={handleBack} className="btn-back">
             ← Back to Project Details
+          </button>
+          <button onClick={handleBack} className="btn-next">
+            Complete
           </button>
         </div>
       </div>
