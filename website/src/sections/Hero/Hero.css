@@ -229,7 +229,7 @@
 /* Responsive Design */
 @media (max-width: 968px) {
   .hero-container {
-    margin-top: 10rem;
+    margin-top: 8rem;
     gap: 14rem;
     text-align: center;
   }
