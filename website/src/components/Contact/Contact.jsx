@@ -167,9 +167,6 @@ const Contact = ({ isOpen, onClose }) => {
               </div>
 
               <div className="form-actions">
-                <button type="button" className="btn-cancel" onClick={onClose}>
-                  Cancel
-                </button>
                 <button
                   type="submit"
                   className="btn-send"
@@ -336,8 +333,8 @@ const Contact = ({ isOpen, onClose }) => {
 
         .form-actions {
           display: flex;
-          gap: 1rem;
-          margin-top: 0.5rem;
+          justify-content: center;
+          margin-top: 0.2rem;
         }
 
         .btn-cancel {
@@ -363,7 +360,7 @@ const Contact = ({ isOpen, onClose }) => {
           color: white;
           border: none;
           border-radius: 12px;
-          padding: 0.875rem 1.5rem;
+          padding: 1rem 3rem;
           font-size: 1rem;
           font-weight: 600;
           cursor: pointer;
