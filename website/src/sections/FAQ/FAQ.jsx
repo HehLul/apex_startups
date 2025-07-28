@@ -1,9 +1,11 @@
 // FAQ.jsx
 import React, { useState } from "react";
 import "./FAQ.css";
+import Contact from "../../components/Contact/Contact";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [showContact, setShowContact] = useState(false);
 
   const faqs = [
     {
@@ -45,48 +47,56 @@ const FAQ = () => {
   };
 
   return (
-    <section className="faq" id="faq">
-      <div className="faq-container">
-        <div className="faq-header">
-          <h2>Frequently Asked Questions</h2>
-          <p>Everything you need to know about working with ApexStartups</p>
-        </div>
+    <>
+      <section className="faq" id="faq">
+        <div className="faq-container">
+          <div className="faq-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about working with ApexStartups</p>
+          </div>
 
-        <div className="faq-list">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className={`faq-item ${
-                openIndex === index ? "faq-item-open" : ""
-              }`}
-            >
-              <button
-                className="faq-question"
-                onClick={() => toggleFAQ(index)}
-                aria-expanded={openIndex === index}
+          <div className="faq-list">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className={`faq-item ${
+                  openIndex === index ? "faq-item-open" : ""
+                }`}
               >
-                <span className="question-text">{faq.question}</span>
-                <span className="faq-icon">
-                  {openIndex === index ? "−" : "+"}
-                </span>
-              </button>
+                <button
+                  className="faq-question"
+                  onClick={() => toggleFAQ(index)}
+                  aria-expanded={openIndex === index}
+                >
+                  <span className="question-text">{faq.question}</span>
+                  <span className="faq-icon">
+                    {openIndex === index ? "−" : "+"}
+                  </span>
+                </button>
 
-              <div className="faq-answer">
-                <div className="answer-content">
-                  <p>{faq.answer}</p>
+                <div className="faq-answer">
+                  <div className="answer-content">
+                    <p>{faq.answer}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="faq-footer">
-          <h3>Still have questions?</h3>
-          <p>Can't find the answer you're looking for? We're here to help.</p>
-          <button className="contact-button">Get in Touch</button>
+          <div className="faq-footer">
+            <h3>Still have questions?</h3>
+            <p>Can't find the answer you're looking for? We're here to help.</p>
+            <button
+              className="contact-button"
+              onClick={() => setShowContact(true)}
+            >
+              Get in Touch
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Contact isOpen={showContact} onClose={() => setShowContact(false)} />
+    </>
   );
 };
 

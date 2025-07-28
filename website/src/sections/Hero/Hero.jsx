@@ -18,16 +18,17 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title">
-            We Bring Your Startup Idea Into Reality
+            Turn Your Startup Idea Into Reality in Just 21 Days
           </h1>
           <p className="hero-subtitle">
-            Built with speed and precision. No technical headaches.
+            Built fast, built right. No technical headaches, no equity required,
+            no months of searching for developers
           </p>
 
           <div className="hero-features">
             <div className="hero-feature">
               <span className="hero-feature-icon">⚡</span>
-              <span className="hero-feature-text">Launch-ready in weeks</span>
+              <span className="hero-feature-text">Launch-ready in days</span>
             </div>
             <div className="hero-feature">
               <span className="hero-feature-icon">🚀</span>

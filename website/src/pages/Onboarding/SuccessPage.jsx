@@ -26,7 +26,7 @@ const SuccessPage = () => {
 
   return (
     <>
-      <LoadScreen delay={1500} text="Finalizing your details..." />
+      <LoadScreen delay={3000} text="Finalizing your details..." />
       <div className="success-page-container">
         {/* Custom Confetti Animation */}
         <Confetti

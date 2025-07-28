@@ -36,7 +36,7 @@ const Pricing = () => {
         "Interactive prototypes for approval",
         "User authentication system",
         "Mobile-responsive design",
-        "4-week delivery",
+        "21-day delivery",
       ],
       cta: "Get Started",
       popular: true,
