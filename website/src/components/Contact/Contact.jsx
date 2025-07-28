@@ -413,6 +413,7 @@ const Contact = ({ isOpen, onClose }) => {
             width: 100%;
           }
           .contact-modal {
+            overflow-y: auto;
             margin: 1rem;
           }
 
