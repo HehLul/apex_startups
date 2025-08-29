@@ -61,7 +61,7 @@ const Page2 = () => {
       const formData = new FormData();
 
       // Your Web3Forms access key
-      formData.append("access_key", "80dd089a-fff2-4b19-a503-37493730eb98");
+      formData.append("access_key", "8dab9031-b509-4b1a-ac91-bceb7faae902");
 
       // Email details
       formData.append(
