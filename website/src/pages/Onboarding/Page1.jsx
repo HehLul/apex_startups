@@ -6,6 +6,7 @@ import LoadScreen from "../../components/LoadScreen/LoadScreen";
 
 const Page1 = () => {
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     companyName: "",
     role: "",
@@ -32,11 +33,16 @@ const Page1 = () => {
   const validateForm = () => {
     const newErrors = {};
 
+    if (!formData.name?.trim()) {
+      newErrors.name = "Name is required";
+    }
+
     if (!formData.email?.trim()) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
+
     if (!formData.companyName?.trim()) {
       newErrors.companyName = "Company/Project name is required";
     }
@@ -100,6 +106,21 @@ const Page1 = () => {
 
           <form className="onboarding-form">
             <div className="form-group priority-field">
+              <label htmlFor="name">Name *</label>
+              <input
+                type="text"
+                id="name"
+                value={formData.name}
+                onChange={(e) => handleInputChange("name", e.target.value)}
+                placeholder="Your full name"
+                className={errors.name ? "error" : ""}
+              />
+              {errors.name && (
+                <span className="error-message">{errors.name}</span>
+              )}
+            </div>
+
+            <div className="form-group priority-field">
               <label htmlFor="email">Email *</label>
               <input
                 type="email"
@@ -113,6 +134,7 @@ const Page1 = () => {
                 <span className="error-message">{errors.email}</span>
               )}
             </div>
+
             <div className="form-group">
               <label htmlFor="companyName">Company/Project name *</label>
               <input
@@ -144,6 +166,7 @@ const Page1 = () => {
                 <span className="error-message">{errors.industry}</span>
               )}
             </div>
+
             <div className="form-group">
               <label htmlFor="referralSource">
                 How did you hear about us? *

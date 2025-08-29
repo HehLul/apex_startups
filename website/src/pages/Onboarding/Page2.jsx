@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import "./OnboardingStyles.css";
 import ProgressIndicator from "../../components/ProgressIndicator/ProgressIndicator";
+
 const Page2 = () => {
   const [formData, setFormData] = useState({
     projectType: "",
@@ -13,6 +14,7 @@ const Page2 = () => {
     files: [],
   });
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (field, value) => {
     setFormData((prev) => ({
@@ -54,16 +56,106 @@ const Page2 = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const navigate = useNavigate();
-  const handleNext = () => {
-    if (validateForm()) {
-      // Store form data in localStorage
-      localStorage.setItem("onboardingPage2", JSON.stringify(formData));
+  const sendEmailNotification = async (page1Data, page2Data) => {
+    try {
+      const formData = new FormData();
 
-      // Navigate to next page (you'll implement this routing)
-      console.log("Page 2 form data saved:", formData);
-      //   alert("Form submitted! (Add routing to next page here)");
-      navigate("/onboard");
+      // Your Web3Forms access key
+      formData.append("access_key", "80dd089a-fff2-4b19-a503-37493730eb98");
+
+      // Email details
+      formData.append(
+        "subject",
+        `New ApexStartups Lead: ${page1Data.companyName || "Unknown Project"}`
+      );
+      formData.append("from_name", "ApexStartups Onboarding");
+      formData.append("to_email", "your-email@example.com"); // Your email
+
+      // Compile all the data into a readable message
+      const emailMessage = `
+NEW LEAD SUBMISSION
+====================
+
+PERSONAL INFO:
+• Name: ${page1Data.name || "Not provided"}
+• Email: ${page1Data.email || "Not provided"}
+• Company/Project: ${page1Data.companyName || "Not provided"}
+• Industry: ${page1Data.industry || "Not provided"}
+• Referral Source: ${page1Data.referralSource || "Not provided"}
+
+PROJECT DETAILS:
+• Project Type: ${page2Data.projectType || "Not provided"}
+• Timeline: ${page2Data.timeline || "Not provided"}
+• Budget: ${page2Data.budget || "Not provided"}
+
+DESCRIPTION:
+${page2Data.description || "Not provided"}
+
+MUST-HAVE FEATURES:
+${page2Data.mustHaveFeatures || "Not provided"}
+
+NICE-TO-HAVE FEATURES:
+${page2Data.niceToHaveFeatures || "None specified"}
+
+====================
+Lead submitted at: ${new Date().toLocaleString()}
+      `;
+
+      formData.append("message", emailMessage);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        console.error("Email sending failed:", data);
+        throw new Error(data.message || "Failed to send notification email");
+      }
+
+      return true;
+    } catch (error) {
+      console.error("Error sending email notification:", error);
+      return false;
+    }
+  };
+
+  const navigate = useNavigate();
+  const handleNext = async () => {
+    if (validateForm()) {
+      setIsSubmitting(true);
+
+      try {
+        // Store current page data
+        localStorage.setItem("onboardingPage2", JSON.stringify(formData));
+
+        // Get all stored data
+        const page1Data = JSON.parse(
+          localStorage.getItem("onboardingPage1") || "{}"
+        );
+        const page2Data = formData;
+
+        // Send email notification
+        const emailSent = await sendEmailNotification(page1Data, page2Data);
+
+        if (emailSent) {
+          console.log("Email notification sent successfully");
+        } else {
+          console.warn("Email notification failed, but continuing...");
+          // You might want to store this failure and retry later
+        }
+
+        // Continue to next page regardless of email success/failure
+        navigate("/onboard");
+      } catch (error) {
+        console.error("Error in form submission:", error);
+        // Still navigate even if email fails
+        navigate("/onboard");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -73,7 +165,6 @@ const Page2 = () => {
     navigate("/getstarted");
   };
 
-  // In Page 1 component
   useEffect(() => {
     window.scrollTo(0, 0);
     const savedPage1Data = localStorage.getItem("onboardingPage1");
@@ -84,7 +175,6 @@ const Page2 = () => {
       setFormData(parsedData);
     }
 
-    // Optional: If you want to preserve page 2 data when going back
     if (savedPage1Data) {
       console.log("Page 1 data available:", JSON.parse(savedPage1Data));
     }
@@ -140,44 +230,6 @@ const Page2 = () => {
             )}
           </div>
 
-          {/* <div className="form-group">
-            <label htmlFor="timeline">Timeline expectations *</label>
-            <select
-              id="timeline"
-              value={formData.timeline}
-              onChange={(e) => handleInputChange("timeline", e.target.value)}
-              className={errors.timeline ? "error" : ""}
-            >
-              <option value="">Select timeline</option>
-              <option value="asap">ASAP</option>
-              <option value="1-2-months">1-2 months</option>
-              <option value="3-plus-months">3+ months</option>
-              <option value="flexible">Flexible</option>
-            </select>
-            {errors.timeline && (
-              <span className="error-message">{errors.timeline}</span>
-            )}
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="budget">Budget range *</label>
-            <select
-              id="budget"
-              value={formData.budget}
-              onChange={(e) => handleInputChange("budget", e.target.value)}
-              className={errors.budget ? "error" : ""}
-            >
-              <option value="">Select budget range</option>
-              <option value="1500">$1,500 (Landing Page)</option>
-              <option value="4000">$4,000 (MVP Development)</option>
-              <option value="custom">Custom Quote (Full-Service)</option>
-              <option value="not-sure">Not sure yet</option>
-            </select>
-            {errors.budget && (
-              <span className="error-message">{errors.budget}</span>
-            )}
-          </div> */}
-
           <div className="form-section">
             <h3 className="section-title">Features</h3>
 
@@ -228,9 +280,14 @@ const Page2 = () => {
           <button type="button" className="btn-back" onClick={handleBack}>
             ← Back
           </button>
-          <button type="button" className="btn-next" onClick={handleNext}>
-            Continue
-            <span className="arrow">→</span>
+          <button
+            type="button"
+            className="btn-next"
+            onClick={handleNext}
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : "Continue"}
+            {!isSubmitting && <span className="arrow">→</span>}
           </button>
         </div>
       </div>

@@ -19,6 +19,9 @@ const SuccessPage = () => {
 
     window.addEventListener("resize", handleResize);
 
+    console.log(localStorage.getItem("onboardingPage1"));
+    console.log(localStorage.getItem("onboardingPage2"));
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
