@@ -117,7 +117,7 @@ const Pricing = () => {
                       </div>
                       {plan.initial_price && (
                         <div className="price-limited-time">
-                          Limited time - First 5 clients only
+                          Limited time - First 3 clients only
                         </div>
                       )}
                     </>

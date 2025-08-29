@@ -13,11 +13,6 @@ const FAQ = () => {
       answer:
         "We start with a discovery call to understand your vision and goals. Within 24 hours, you'll receive a detailed project timeline and scope breakdown. Then we schedule a follow-up call to finalize details, explain pricing, and discuss the payment process. After that call, you'll receive a contract and can send your deposit to kick off development.",
     },
-    {
-      question: "What is your development process like?",
-      answer:
-        "Our development follows a proven 4-phase approach: Discovery & Planning (requirements gathering and technical architecture), Design & Prototyping (UI/UX design and user flow mapping), Development & Testing (agile development with regular updates), and Launch & Handover (deployment, testing, and documentation). You'll receive progress updates every 24-48 hours.",
-    },
 
     {
       question: "Any work you don't cover?",
@@ -27,7 +22,7 @@ const FAQ = () => {
     {
       question: "How do the payments work?",
       answer:
-        "For our Landing Page package, we require 30% upfront and 70% upon completion. For the MVP package, payment is split into three installments: 30% deposit to start, 30% at the midpoint of development, and 40% upon final delivery. For custom projects, we work with milestone-based payments. We accept bank transfers, credit cards, and PayPal. All pricing is transparent with no hidden fees. We'll clearly outline any additional costs like hosting or third-party services upfront.",
+        "For our Landing Page package, we require $250 upfront and $250 upon completion. For the MVP package, we require $500 upfront and $1000 upon completion. For custom projects, we work with milestone-based payments. We accept bank transfers, credit cards, and PayPal. All pricing is transparent with no hidden fees. We'll clearly outline any additional costs like hosting or third-party services upfront.",
     },
     {
       question:
@@ -38,7 +33,7 @@ const FAQ = () => {
     {
       question: "What if I need changes during/after the service?",
       answer:
-        "Minor adjustments and reasonable revisions are included in all packages. For significant scope changes during development, we'll provide a transparent quote for additional work. After project completion, we offer maintenance packages starting at $500/month, or you can request one-off changes on an hourly basis.",
+        "Minor adjustments and reasonable revisions are included in all packages. For significant scope changes during development, we'll provide a transparent quote for additional work.",
     },
   ];
 

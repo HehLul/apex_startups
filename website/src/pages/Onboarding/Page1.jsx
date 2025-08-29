@@ -10,7 +10,6 @@ const Page1 = () => {
     companyName: "",
     role: "",
     industry: "",
-    stage: "",
     referralSource: "",
   });
   const [errors, setErrors] = useState({});
@@ -44,10 +43,6 @@ const Page1 = () => {
 
     if (!formData.industry?.trim()) {
       newErrors.industry = "Industry/Market is required";
-    }
-
-    if (!formData.stage) {
-      newErrors.stage = "Please select your company stage";
     }
 
     if (!formData.referralSource) {
@@ -147,24 +142,6 @@ const Page1 = () => {
               />
               {errors.industry && (
                 <span className="error-message">{errors.industry}</span>
-              )}
-            </div>
-            <div className="form-group">
-              <label htmlFor="stage">Company stage *</label>
-              <select
-                id="stage"
-                value={formData.stage}
-                onChange={(e) => handleInputChange("stage", e.target.value)}
-                className={errors.stage ? "error" : ""}
-              >
-                <option value="">Select your stage</option>
-                <option value="idea">Idea</option>
-                <option value="pre-launch">Pre-launch</option>
-                <option value="early-stage">Early stage</option>
-                <option value="growing">Growing</option>
-              </select>
-              {errors.stage && (
-                <span className="error-message">{errors.stage}</span>
               )}
             </div>
             <div className="form-group">
