@@ -345,3 +345,144 @@
     flex-direction: row;
   }
 }
+/* Add these styles to your existing Pricing.css */
+
+.plan-price {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-discount-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.price-original {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.price-discount-badge {
+  background: #ef4444;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.price-current {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.price-currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.price-amount {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1;
+}
+
+.price-period {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.price-limited-time {
+  font-size: 0.85rem;
+  color: #ef4444;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Update popular badge to reflect urgency */
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ef4444;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  animation: urgentPulse 3s infinite;
+}
+
+@keyframes urgentPulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+/* Mobile responsiveness for discount display */
+@media (max-width: 768px) {
+  .price-discount-container {
+    gap: 8px;
+  }
+
+  .price-original {
+    font-size: 1rem;
+  }
+
+  .price-discount-badge {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+
+  .price-amount {
+    font-size: 2.5rem;
+  }
+
+  .price-limited-time {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-discount-container {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .price-amount {
+    font-size: 2rem;
+  }
+}

@@ -11,7 +11,8 @@ const Pricing = () => {
     {
       id: "landing-page",
       name: "Landing Page",
-      price: 1200,
+      initial_price: 1500,
+      price: 500,
       description:
         "Perfect for pre-launch validation and building your waitlist",
       features: [
@@ -28,7 +29,8 @@ const Pricing = () => {
     {
       id: "mvp",
       name: "MVP Development",
-      price: 4000,
+      initial_price: 5000,
+      price: 1500,
       description:
         "Complete MVP with core features to validate your concept with real users",
       features: [
@@ -93,11 +95,31 @@ const Pricing = () => {
                 <div className="plan-price">
                   {plan.price ? (
                     <>
-                      <span className="price-currency">$</span>
-                      <span className="price-amount">
-                        {plan.price.toLocaleString()}
-                      </span>
-                      <span className="price-period">one-time</span>
+                      {plan.initial_price && (
+                        <div className="price-discount-container">
+                          <span className="price-original">
+                            ${plan.initial_price.toLocaleString()}
+                          </span>
+                          <span className="price-discount-badge">
+                            {Math.round(
+                              (1 - plan.price / plan.initial_price) * 100
+                            )}
+                            % OFF
+                          </span>
+                        </div>
+                      )}
+                      <div className="price-current">
+                        <span className="price-currency">$</span>
+                        <span className="price-amount">
+                          {plan.price.toLocaleString()}
+                        </span>
+                        <span className="price-period">one-time</span>
+                      </div>
+                      {plan.initial_price && (
+                        <div className="price-limited-time">
+                          Limited time - First 5 clients only
+                        </div>
+                      )}
                     </>
                   ) : (
                     <span className="price-custom">Custom Quote</span>
