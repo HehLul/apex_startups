@@ -18,7 +18,7 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title">
-            Turn Your Startup Idea Into Reality in Just 21 Days
+           Got a Startup Idea? We'll Build It.
           </h1>
           <p className="hero-subtitle">
             Built fast, built right. No technical headaches, no equity required,
