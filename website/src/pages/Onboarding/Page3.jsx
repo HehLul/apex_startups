@@ -102,7 +102,7 @@ const Page3 = () => {
               <div className="calendly-container">
                 <div
                   className="calendly-inline-widget"
-                  data-url="https://calendly.com/amdsalman04/30min"
+                  data-url="https://calendly.com/apexstartups/30min"
                   style={{ minWidth: "100%", height: "500px" }}
                 ></div>
               </div>
